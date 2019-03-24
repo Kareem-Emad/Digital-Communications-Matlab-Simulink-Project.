@@ -21,9 +21,23 @@ Note: You can reproduce the results also from the code available by running the 
 ## Modulation Schemes:
 
 ### BPSK Modulation
+Binary Phase Shift Keying uses variation in phase to represent zeros and ones in a binary message.which means we only need two states in phase to represent the bits in the message.
+````
+s(t | b == 1) = Ac . cos( 2 . PI . fc . t )	
+s(t | b == 0) = Ac . cos( 2 . PI . fc . t +  PI )	
+````
+where b is the bit being transmitted at instantaneous time t with carrier frequency fc and amplitude Ac.
+
+At the reciever end, a coherent detector(costas/PLL reciever) is used to recover the modulated signal.
+
+
 #### BER versus Eb/No  ranging from -10 to 10 dB.
+
 ![ A semilogY plot of the BER versus Eb/No ranging from -10 to 10 dB](./images/bspk/ber.PNG)
 #### Scatters plots at transmitter/reciever ends.
+
+The constellation diagram for BPSK below shows two points on the x axis because it has an inphase component and no quardrature components as it only has one basis function.
+
 ![ Scatter Plots](./images/bspk/cons.PNG)
 
 
